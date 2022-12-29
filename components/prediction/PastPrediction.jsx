@@ -48,7 +48,7 @@ const PastPrediction = () => {
             />
             <p className="text-xs text-[#969699]">Sort by</p>
             <select className="rounded" name="" id="">
-              <option value=""></option>
+              g<option value=""></option>
             </select>
           </div>
         </div>

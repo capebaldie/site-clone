@@ -13,7 +13,7 @@ const PaymentPage = () => {
         <div className="flex gap-4 items-center">
           <BsArrowLeft
             onClick={() => {
-              router.push("/withdrawpage");
+              router.push("/walletpage");
             }}
             className="border p-2 w-10 h-auto cursor-pointer hover:bg-[#f7f7f8] transition ease-in-out duration-200"
           />

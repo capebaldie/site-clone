@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { BsCheckCircleFill } from "react-icons/bs";
-import { useRouter } from "next/router";
 
 const Withdraw = () => {
   //
   const [check, setCheck] = useState(false);
-
-  const router = useRouter();
 
   const handleCheck = () => {
     setCheck(!check);
@@ -51,12 +48,7 @@ const Withdraw = () => {
             }`}
           />
         </div>
-        <p
-          onClick={() => {
-            router.push("/payment");
-          }}
-          className="hover:underline text-[#32a693] my-4 cursor-pointer"
-        >
+        <p className="hover:underline text-[#32a693] my-4 cursor-pointer">
           + Add New Account
         </p>
         <button className="bg-[#32a693] text-white my-2 py-4 hover:text-[#32a693] hover:bg-transparent transition ease-out duration-200 border border-[#32a693] w-full">

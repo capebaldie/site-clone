@@ -12,9 +12,11 @@ const SideNavBar = () => {
 
   const [showModal, setShowModal] = useState(false);
 
+  const [dropdown, setDropdown] = useState(false);
+
   return (
     <>
-      <main className="sm:flex flex-col bg-[#f7f7f8] gap-4 w-[18%] h-screen hidden sticky top-0">
+      <main className="sm:flex flex-col bg-[#f7f7f8] gap-4 w-[18%] hidden h-screen sticky top-0">
         <div className="">
           <img className="w-16 h-auto m-4" src="peg.png" alt="" />
         </div>
@@ -35,12 +37,42 @@ const SideNavBar = () => {
             Trending
           </p>
         </div>
-        <div className="flex items-center pl-3 py-1 group hover:bg-[#32a693] transition ease-out duration-200">
+        <div
+          onClick={() => {
+            setDropdown(!dropdown);
+          }}
+          className="flex items-center pl-3 py-1 group hover:bg-[#32a693] transition ease-out duration-200"
+        >
           <img className="w-5 h-auto " src="../logos/element-plus.png" alt="" />
           <p className="pl-3 text-[#88888c] text-base group-hover:text-white">
             Categories
           </p>
         </div>
+        <div
+          className={`${
+            dropdown ? "flex " : "hidden"
+          } flex-col items-end mr-8 gap-2 transition-all ease-in-out duration-300`}
+        >
+          <p className="text-[#88888c] text-sm">
+            Business <span className="ml-10">+</span>
+          </p>
+          <p className="text-[#88888c] text-sm">
+            Crypto <span className="ml-10">+</span>
+          </p>
+          <p className="text-[#88888c] text-sm">
+            Finance <span className="ml-10">+</span>
+          </p>
+          <p className="text-[#88888c] text-sm">
+            Movie <span className="ml-10">+</span>
+          </p>
+          <p className="text-[#88888c] text-sm">
+            Politics <span className="ml-10">+</span>
+          </p>
+          <p className="text-[#88888c] text-sm">
+            Sports <span className="ml-10">+</span>
+          </p>
+        </div>
+
         <div className="flex items-center pl-3 py-1 group  hover:bg-[#32a693] transition ease-out duration-200">
           <img className="w-5 h-auto " src="../logos/heart.png" alt="" />
           <p className="pl-3 text-[#88888c] text-base group-hover:text-white">
@@ -86,7 +118,7 @@ const SideNavBar = () => {
           onClick={() => {
             setShowModal(!showModal);
           }}
-          className="flex items-center pl-3 py-1 mt-39 cursor-pointer"
+          className="flex items-center pl-3 py-1 mt-28 cursor-pointer"
         >
           <img className="w-5 h-auto " src="../logos/export.svg" alt="" />
           <p className="pl-3 text-red-500 text-base ">Log out</p>
